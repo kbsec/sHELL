@@ -1,5 +1,6 @@
 # sHELL
 a hellish way to  build a simple shell. 
+course work for CY4973 Introductions to Windows Malware
 
 ## Basics
 This is a teaching shell used to help students incramentally build out functionality for their final project 
