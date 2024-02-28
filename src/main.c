@@ -53,7 +53,7 @@ BOOL InitializeCore() {
       (_GetProcAddress *)GetProcAddress(core->hKernel32, "GetProcAddress");
 
   // hash function
-  core->dbj2hash = dbj2Hash;
+  core->djb2hash = djb2Hash;
   core->gaCommandsA = gaCommandsA;
   core->gModuleCount = &gModuleCount;
   core->ResolveCommandDependnecies = ResolveCommandDependencies;
@@ -109,11 +109,11 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     argv = CommandLineToArgvA(buffer, &argc);
     for (int i = 0; i < argc; i++) {
       debug_wprintf(L"%d %S=%lu %d \n", i, argv[i],
-                    dbj2Hash((unsigned char *)argv[i]), strlen(argv[i]));
+                    djb2Hash((unsigned char *)argv[i]), strlen(argv[i]));
     }
     if (argc > 0) {
       stripnewline(argv[0]);
-      unsigned int hash = dbj2Hash((unsigned char *)argv[0]);
+      unsigned int hash = djb2Hash((unsigned char *)argv[0]);
       for (int i = 0; i < gModuleCount; i++) {
         if (gaCommandsA[i].hash == hash) {
           debug_wprintf(L"Running %S\n", gaCommandsA[i].fnName());

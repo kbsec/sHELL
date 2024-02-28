@@ -23,7 +23,7 @@ int strcmp(const char *s1, const char *s2) {
   return *(const unsigned char *)s1 - *(const unsigned char *)s2;
 }
 
-unsigned long dbj2Hash(unsigned char *str) {
+unsigned long djb2Hash(unsigned char *str) {
   unsigned long hash = 5381;
   int c;
 
