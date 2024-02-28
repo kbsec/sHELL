@@ -48,7 +48,7 @@ BOOL InitializeCore() {
   core->wstrlen = wstrlen;
 
   // WinAPI
-  core->hKernel32 = GetModuleHandleW(L"kernek32.dll");
+  core->hKernel32 = GetModuleHandleW(L"kernel32.dll");
   core->hGetProcAddress =
       (_GetProcAddress *)GetProcAddress(core->hKernel32, "GetProcAddress");
 
