@@ -18,7 +18,10 @@ __declspec(dllexport) VOID CommandCleanup() {
   }
 }
 // initialization code
-__declspec(dllexport) BOOL CommandInit(InternalAPI *lpCore) { core = lpCore; }
+__declspec(dllexport) BOOL CommandInit(InternalAPI *lpCore) {
+  core = lpCore;
+  return TRUE;
+}
 
 // Exported function - Name
 __declspec(dllexport) const char *CommandNameA() { return Name; }

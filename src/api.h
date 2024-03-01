@@ -66,7 +66,7 @@ typedef struct InternalAPI {
   t_strcmp *strcmp;
 
   t_strcpy *strcpy;
-  t_dbj2Hash *dbj2hash;
+  t_djb2Hash *djb2hash;
 
   t_stripnewline *stripnewline;
 
